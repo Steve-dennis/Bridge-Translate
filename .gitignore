@@ -1,0 +1,7 @@
+__pycache__
+.coverage
+.venv/
+tmp/
+config.json
+config.local.json
+.test-config.json

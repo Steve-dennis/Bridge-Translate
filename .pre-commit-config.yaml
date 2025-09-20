@@ -1,0 +1,26 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-format
+        name: ruff format
+        entry: python -m ruff format
+        language: system
+        types_or: [python, pyi]
+        pass_filenames: true
+        files: '^(main\.py|bridge_translate/.*\.py)$'
+
+      - id: ruff-check
+        name: ruff check (auto-fix)
+        entry: python -m ruff check --fix
+        language: system
+        types_or: [python, pyi]
+        pass_filenames: true
+        files: '^(main\.py|bridge_translate/.*\.py)$'
+
+      - id: mypy
+        name: mypy (type check)
+        entry: python -m mypy
+        language: system
+        types_or: [python, pyi]
+        pass_filenames: false
+        files: '^(main\.py|bridge_translate/.*\.py)$'

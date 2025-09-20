@@ -1,0 +1,17 @@
+[tool.mypy]
+python_version = "3.11"
+strict_optional = true
+warn_unused_ignores = true
+no_implicit_optional = true
+files = [
+  "main.py",
+  "bridge_translate",
+]
+
+[[tool.mypy.overrides]]
+module = [
+  "argostranslate",
+  "argostranslate.*",
+]
+ignore_missing_imports = true
+
